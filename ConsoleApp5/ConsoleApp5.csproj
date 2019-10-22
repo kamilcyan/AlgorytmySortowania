@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Babelkowe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Szybkie.cs" />
+    <Compile Include="Wstawianie.cs" />
+    <Compile Include="Wybieranie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
