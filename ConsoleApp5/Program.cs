@@ -34,16 +34,20 @@ namespace ConsoleApp5
             switch ((int)chose)
             {
                 case 0:
-                    Wybieranie.Sort(tab);
+                    Wybieranie wybieranie = new Wybieranie();
+                    wybieranie.Sort(tab);
                     break;
                 case 1:
-                    Wstawianie.Sort(tab);
+                    Wstawianie wstawianie = new Wstawianie();
+                    wstawianie.Sort(tab);
                     break;
                 case 2:
-                    Babelkowe.Sort(tab);
+                    Babelkowe babelkowe = new Babelkowe();
+                    babelkowe.Sort(tab);
                     break;
                 case 3:
-                    Szybkie.Sort(tab);
+                    Szybkie szybkie = new Szybkie();
+                    szybkie.Sort(tab);
                     break;
                 default:
                     break;

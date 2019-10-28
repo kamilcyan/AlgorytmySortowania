@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Babelkowe : IModels
+    public class Babelkowe : Showing, IModels
     {
-        public static void Sort<T>(T[] tab) where T : IComparable
+        public void Sort<T>(T[] tab) where T : IComparable
         {
             Babelkowe babelkowe = new Babelkowe();
 
@@ -25,7 +25,7 @@ namespace ConsoleApp5
             babelkowe.Show(tab);
         }
 
-        public void Show<T>(T[] tab) where T : IComparable
+        public override void Show<T>(T[] tab)
         {
             for (int i = 0; i < tab.Length; i++)
             {
@@ -33,7 +33,7 @@ namespace ConsoleApp5
             }
         }
 
-        public void Swap<T>(T[] tab, int first, int second)
+        public override void Swap<T>(T[] tab, int first, int second)
         {
             T temp = tab[first];
             tab[first] = tab[second];

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Szybkie : IModels
+    public class Szybkie : Showing, IModels
     {
-        public static void Sort<T>(T[] tab) where T : IComparable
+        public  void Sort<T>(T[] tab) where T : IComparable
         {
             Szybkie szybkie = new Szybkie();
 
@@ -17,7 +17,7 @@ namespace ConsoleApp5
             szybkie.Show(tab);
         }
 
-        private static T[] Sort<T>(T[] tab, int lower, int upper) where T : IComparable
+        private  T[] Sort<T>(T[] tab, int lower, int upper) where T : IComparable
         {
             if (lower < upper)
             {
@@ -46,7 +46,7 @@ namespace ConsoleApp5
             return j;
         }
 
-        public void Show<T>(T[] tab) where T : IComparable
+        public override void Show<T>(T[] tab) 
         {
             for (int i = 0; i < tab.Length; i++)
             {
@@ -54,7 +54,7 @@ namespace ConsoleApp5
             }
         }
 
-        public void Swap<T>(T[] tab, int first, int second)
+        public override void Swap<T>(T[] tab, int first, int second)
         {
             T temp = tab[first];
             tab[first] = tab[second];

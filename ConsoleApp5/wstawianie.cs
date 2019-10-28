@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Wstawianie : IModels
+    public class Wstawianie : Showing, IModels
     {
-        public static void Sort<T>(T[] tab) where T : IComparable
+        public void Sort<T>(T[] tab) where T : IComparable
         {
             Wstawianie wstawianie = new Wstawianie();
 
@@ -24,7 +24,7 @@ namespace ConsoleApp5
             wstawianie.Show(tab);
         }
 
-        public void Show<T>(T[] tab) where T : IComparable
+        public override void Show<T>(T[] tab)
         {
             for (int i = 0; i < tab.Length; i++)
             {
@@ -32,7 +32,7 @@ namespace ConsoleApp5
             }
         }
 
-        public void Swap<T>(T[] tab, int first, int second)
+        public override void Swap<T>(T[] tab, int first, int second)
         {
             T temp = tab[first];
             tab[first] = tab[second];
