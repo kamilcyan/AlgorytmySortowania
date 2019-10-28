@@ -8,6 +8,8 @@ namespace ConsoleApp5
 {
     public abstract class Showing : IModels
     {
+        public abstract void Sort<T>(T[] tab) where T : IComparable;
+
         public virtual void Show<T>(T[] tab) where T : IComparable
         {
             for (int i = 0; i < tab.Length; i++)
@@ -15,8 +17,6 @@ namespace ConsoleApp5
                 Console.WriteLine(tab[i]);
             }
         }
-
-        public abstract void Sort<T>(T[] tab) where T : IComparable;
 
         public virtual void Swap<T>(T[] tab, int first, int second)
         {

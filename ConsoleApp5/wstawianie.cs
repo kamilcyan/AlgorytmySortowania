@@ -23,20 +23,5 @@ namespace ConsoleApp5
             }
             wstawianie.Show(tab);
         }
-
-        public override void Show<T>(T[] tab)
-        {
-            for (int i = 0; i < tab.Length; i++)
-            {
-                Console.WriteLine(tab[i]);
-            }
-        }
-
-        public override void Swap<T>(T[] tab, int first, int second)
-        {
-            T temp = tab[first];
-            tab[first] = tab[second];
-            tab[second] = temp;
-        }
     }
 }
