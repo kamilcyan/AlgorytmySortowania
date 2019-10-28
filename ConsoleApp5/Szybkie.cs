@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Szybkie : Showing, IModels
+    public class Szybkie : Showing
     {
-        public  void Sort<T>(T[] tab) where T : IComparable
+        public override void Sort<T>(T[] tab)
         {
             Szybkie szybkie = new Szybkie();
 

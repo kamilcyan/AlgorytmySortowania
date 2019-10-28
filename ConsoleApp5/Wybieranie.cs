@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Wybieranie : Showing, IModels
+    public class Wybieranie : Showing
     {
-        public void Sort<T>(T[] tab) where T : IComparable
+        public override void Sort<T>(T[] tab)
         {
             Wybieranie wybieranie = new Wybieranie();
             for (int i = 0; i < tab.Length - 1; i++)

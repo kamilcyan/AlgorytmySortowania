@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Babelkowe : Showing, IModels
+    public class Babelkowe : Showing
     {
-        public void Sort<T>(T[] tab) where T : IComparable
+        public override void Sort<T>(T[] tab)
         {
             Babelkowe babelkowe = new Babelkowe();
 

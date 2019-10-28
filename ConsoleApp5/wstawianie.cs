@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Wstawianie : Showing, IModels
+    public class Wstawianie : Showing
     {
-        public void Sort<T>(T[] tab) where T : IComparable
+        public override void Sort<T>(T[] tab)
         {
             Wstawianie wstawianie = new Wstawianie();
 
