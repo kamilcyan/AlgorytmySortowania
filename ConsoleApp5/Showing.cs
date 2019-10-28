@@ -16,10 +16,7 @@ namespace ConsoleApp5
             }
         }
 
-        public virtual void Sort<T>(T[] tab) where T : IComparable
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Sort<T>(T[] tab) where T : IComparable;
 
         public virtual void Swap<T>(T[] tab, int first, int second)
         {
