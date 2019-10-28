@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Szybkie
+    public class Szybkie : IModels
     {
         public static void Sort<T>(T[] tab) where T : IComparable
         {
+            Szybkie szybkie = new Szybkie();
+
             Sort(tab, 0, tab.Length - 1);
 
-            show(tab);
+            szybkie.Show(tab);
         }
 
         private static T[] Sort<T>(T[] tab, int lower, int upper) where T : IComparable
@@ -31,19 +33,20 @@ namespace ConsoleApp5
             int i = lower;
             int j = upper;
             T pivot = tab[lower];
+            Szybkie szybkie = new Szybkie();
 
             do
             {
                 while (tab[i].CompareTo(pivot) < 0) { i++; }
                 while (tab[j].CompareTo(pivot) > 0) { j--; }
                 if (i >= j) { break; }
-                Swap(tab, i, j);
+                szybkie.Swap(tab, i, j);
             }
             while (i <= j);
             return j;
         }
 
-        private static void show<T>(T[] tab) where T : IComparable
+        public void Show<T>(T[] tab) where T : IComparable
         {
             for (int i = 0; i < tab.Length; i++)
             {
@@ -51,7 +54,7 @@ namespace ConsoleApp5
             }
         }
 
-        private static void Swap<T>(T[] tab, int first, int second)
+        public void Swap<T>(T[] tab, int first, int second)
         {
             T temp = tab[first];
             tab[first] = tab[second];

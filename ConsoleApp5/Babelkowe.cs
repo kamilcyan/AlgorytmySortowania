@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Babelkowe
+    public class Babelkowe : IModels
     {
         public static void Sort<T>(T[] tab) where T : IComparable
         {
+            Babelkowe babelkowe = new Babelkowe();
+
             for (int i = 0; i < tab.Length; i++)
             {
                 for (int j = 0; j < tab.Length-1; j++)
                 {
                     if (tab[j].CompareTo(tab[j+1]) > 0)
                     {
-                        Swap(tab, j, j+1);
+                        babelkowe.Swap(tab, j, j+1);
                     }
                 }
             }
-            show(tab);
+            babelkowe.Show(tab);
         }
 
-        private static void show<T>(T[] tab) where T : IComparable
+        public void Show<T>(T[] tab) where T : IComparable
         {
             for (int i = 0; i < tab.Length; i++)
             {
@@ -31,7 +33,7 @@ namespace ConsoleApp5
             }
         }
 
-        private static void Swap<T>(T[] tab, int first, int second)
+        public void Swap<T>(T[] tab, int first, int second)
         {
             T temp = tab[first];
             tab[first] = tab[second];

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class Wybieranie
+    public class Wybieranie : IModels
     {
         public static void Sort<T>(T[] tab) where T : IComparable
         {
+            Wybieranie wybieranie = new Wybieranie();
             for (int i = 0; i < tab.Length - 1; i++)
             {
                 int minIndex = i;
@@ -22,12 +23,12 @@ namespace ConsoleApp5
                         minValue = tab[j];
                     }
                 }
-                Swap(tab, i, minIndex);
+                wybieranie.Swap(tab, i, minIndex);
             }
-            show(tab);
+            wybieranie.Show(tab);
         }
 
-        private static void show<T>(T[] tab) where T : IComparable
+        public void Show<T>(T[] tab) where T : IComparable
         {
             for (int i = 0; i < tab.Length; i++)
             {
@@ -35,7 +36,7 @@ namespace ConsoleApp5
             }
         }
 
-        private static void Swap<T>(T[] tab, int first, int second)
+        public void Swap<T>(T[] tab, int first, int second)
         {
             T temp = tab[first];
             tab[first] = tab[second];
